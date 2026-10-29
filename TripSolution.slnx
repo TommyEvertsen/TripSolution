@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Trip/Trip.csproj" />
+  <Project Path="TripDatabase/TripDatabase.csproj" />
+</Solution>
