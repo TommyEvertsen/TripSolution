@@ -28,7 +28,7 @@ public class MemberController : ControllerBase
             .ToListAsync();
     }
 
-    [HttpGet("{id}")]
+   [HttpGet("{id}")]
     public async Task<ActionResult<MemberDTO>> GetMember(long id)
     {
         var member = await _context.Members.FindAsync(id);
@@ -47,20 +47,23 @@ public class MemberController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<MemberDTO>> PostMember(MemberDTO memberDTO)
+    public async Task<ActionResult<MemberDTORequest>> PostMember(MemberDTORequest memberDTORequest)
     {
         var member = new Member
         {
-            UserName = memberDTO.UserName,
-            DateOfBirth = memberDTO.DateOfBirth
+            FirstName = memberDTORequest.FirstName,
+            LastName = memberDTORequest.LastName,
+            UserName = memberDTORequest.UserName,
+            DateOfBirth = memberDTORequest.DateOfBirth
         };
 
         _context.Members.Add(member);
         await _context.SaveChangesAsync();
 
-        var createdMemberDto = new MemberDTO
+        var createdMemberDto = new MemberDTORequest
         {
-            Id = member.Id,
+            FirstName = member.FirstName,
+            LastName = member.LastName,
             UserName = member.UserName,
             DateOfBirth = member.DateOfBirth
         };
@@ -69,21 +72,18 @@ public class MemberController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> PutMember(long id, MemberDTO memberDTO)
+    public async Task<IActionResult> PutMember(long id, MemberDTORequest memberDTORequest)
     {
-        if (id != memberDTO.Id)
-        {
-            return BadRequest();
-        }
-
         var member = await _context.Members.FindAsync(id);
         if (member is null)
         {
             return NotFound();
         }
 
-        member.UserName = memberDTO.UserName;
-        member.DateOfBirth = memberDTO.DateOfBirth;
+        member.FirstName = memberDTORequest.FirstName;
+        member.LastName = memberDTORequest.LastName;
+        member.UserName = memberDTORequest.UserName;
+        member.DateOfBirth = memberDTORequest.DateOfBirth;
 
         await _context.SaveChangesAsync();
 
