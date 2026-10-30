@@ -21,14 +21,14 @@ namespace Trip.Controllers
             _context = context;
         }
 
-        // GET: api/Trip
+        
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TripEntity>>> GetTrip()
         {
             return await _context.Trips.ToListAsync();
         }
 
-        // GET: api/Trip/5
+     
         [HttpGet("{id}")]
         public async Task<ActionResult<TripEntity>> GetTrip(long id)
         {
@@ -42,39 +42,39 @@ namespace Trip.Controllers
             return trip;
         }
 
-        // PUT: api/Trip/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutTrip(long id, TripEntity trip)
-        {
-            if (id != trip.Id)
-            {
-                return BadRequest();
-            }
+    
+  
+          [HttpPut("{id}")]
+          public async Task<IActionResult> PutTrip(long id, TripEntity trip)
+          {
+              if (id != trip.Id)
+              {
+                  return BadRequest();
+              }
 
-            _context.Entry(trip).State = EntityState.Modified;
+              _context.Entry(trip).State = EntityState.Modified;
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!TripExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+              try
+              {
+                  await _context.SaveChangesAsync();
+              }
+              catch (DbUpdateConcurrencyException)
+              {
+                  if (!TripExists(id))
+                  {
+                      return NotFound();
+                  }
+                  else
+                  {
+                      throw;
+                  }
+              }
 
-            return NoContent();
-        }
+              return NoContent();
+          }
 
-        // POST: api/Trip
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+   
+  
         [HttpPost]
         public async Task<ActionResult<TripEntity>> PostTrip(TripEntity trip)
         {
@@ -84,7 +84,7 @@ namespace Trip.Controllers
             return CreatedAtAction("GetTrip", new { id = trip.Id }, trip);
         }
 
-        // DELETE: api/Trip/5
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTrip(long id)
         {
