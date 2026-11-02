@@ -1,0 +1,172 @@
+﻿.homeGrid ::deep .mud-button-root:hover {
+    background-color: #F3F3F3
+}
+
+/* Card hover styles */
+
+/* Card that goes up on hover */
+/*.homeGrid ::deep .homeCardTransform {
+    transition: transform 180ms ease;
+}
+
+    .homeGrid ::deep .homeCardTransform:hover {
+        transform: translateY(-4px);
+    }*/
+
+/* Card that changes border on hover */
+/*.homeGrid ::deep .homeCardBorder {
+    position: relative;
+    transition: box-shadow 600ms ease-in-out;
+}
+
+    .homeGrid ::deep .homeCardBorder::after {
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        content: "";
+        box-shadow: inset 0 -5px 0 0 #82B1FF;
+        opacity: 0;
+        transition: opacity 300ms ease-in-out;
+        pointer-events: none;
+    }
+
+    .homeGrid ::deep .homeCardBorder:hover::after {
+        box-shadow: inset 0 -5px 0 0 #82B1FF;
+        opacity: 1;
+    }*/
+
+/* Card that combines tranlate up and border */
+/*.homeGrid ::deep .homeCardCombo {
+    position: relative;
+    transition: transform 180ms ease, box-shadow 600ms ease;
+}
+
+    .homeGrid ::deep .homeCardCombo:hover {
+        transform: translateY(-4px);
+    }
+
+    .homeGrid ::deep .homeCardCombo::after {
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        content: "";
+        box-shadow: inset 0 -4px 0 0 #82B1FF;
+        opacity: 0;
+        transition: opacity 300ms ease-in-out;
+        pointer-events: none;
+    }
+
+    .homeGrid ::deep .homeCardCombo:hover::after {
+        box-shadow: inset 0 -4px 0 0 #82B1FF;
+        opacity: 1;
+    }*/
+
+/* Card that changes color on hover */
+
+/*.homeGrid ::deep .homeCardChangeColor {
+    transition: background-color 300ms ease, color 300ms ease;
+}
+
+    .homeGrid ::deep .homeCardChangeColor:hover {
+        background-color: #FF80AB !important;
+        color: white;
+    }
+
+    .homeGrid ::deep .homeCardChangeColor .mud-button-root {
+        background-color: transparent;
+        color: inherit;
+    }
+
+    .homeGrid ::deep .homeCardChangeColor:hover .mud-icon-root {
+        color: white !important;
+    }
+
+    .homeGrid ::deep .homeCardChangeColor:hover .divider {
+        border-color: white !important;
+    }*/
+
+/* Card that changes border plus icon on hover */
+
+/*.homeGrid ::deep .homeCardBorderIcon {
+    position: relative;
+    transition: box-shadow 600ms ease-in-out;
+}
+
+    .homeGrid ::deep .homeCardBorderIcon::after {
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        content: "";
+        box-shadow: inset 0 -5px 0 0 #594AE2;
+        opacity: 0;
+        transition: opacity 300ms ease-in-out;
+        pointer-events: none;
+    }
+
+    .homeGrid ::deep .homeCardBorderIcon:hover::after {
+        box-shadow: inset 0 -5px 0 0 #594AE2;
+        opacity: 1;
+    }
+
+    .homeGrid ::deep .homeCardBorderIcon .mud-icon-root {
+        transition: color 300ms ease-in-out;
+    }
+
+    .homeGrid ::deep .homeCardBorderIcon .divider {
+        transition: border-color 300ms ease-in-out;
+    }
+
+    .homeGrid ::deep .homeCardBorderIcon:hover .mud-icon-root {
+        color: #82B1FF !important;
+    }
+
+    .homeGrid ::deep .homeCardBorderIcon:hover .divider {
+        border-color: #82B1FF !important;
+    }
+*/
+/* Card that changes border plus icon on hover and go up*/
+
+.homeGrid ::deep .homeCardBorderIconUp {
+    position: relative;
+    transition: box-shadow 600ms ease-in-out;
+}
+
+    .homeGrid ::deep .homeCardBorderIconUp::after {
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        content: "";
+        box-shadow: inset 0 -5px 0 0 #594AE2;
+        opacity: 0;
+        transition: opacity 300ms ease-in-out;
+        pointer-events: none;
+    }
+
+    .homeGrid ::deep .homeCardBorderIconUp:hover::after {
+        box-shadow: inset 0 -5px 0 0 #594AE2;
+        opacity: 1;
+    }
+
+    .homeGrid ::deep .homeCardBorderIconUp .mud-icon-root {
+        transition: color 300ms ease-in-out;
+    }
+
+    .homeGrid ::deep .homeCardBorderIconUp .divider {
+        transition: border-color 300ms ease-in-out;
+    }
+
+    .homeGrid ::deep .homeCardBorderIconUp:hover .mud-icon-root {
+        color: #594AE2 !important;
+    }
+
+    .homeGrid ::deep .homeCardBorderIconUp:hover .divider {
+        border-color: #594AE2 !important;
+    }
+
+.homeGrid ::deep .homeCardBorderIconUp {
+    transition: transform 180ms ease;
+}
+
+    .homeGrid ::deep .homeCardBorderIconUp:hover {
+        transform: translateY(-4px);
+    }

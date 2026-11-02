@@ -28,7 +28,7 @@ public class MemberController : ControllerBase
             .ToListAsync();
     }
 
-   [HttpGet("{id}")]
+    [HttpGet("{id}")]
     public async Task<ActionResult<MemberDTO>> GetMember(long id)
     {
         var member = await _context.Members.FindAsync(id);
