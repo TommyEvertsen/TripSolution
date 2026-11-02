@@ -1,5 +1,5 @@
-using TripFrontEnd.Components;
 using MudBlazor.Services;
+using TripFrontEnd.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 

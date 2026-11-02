@@ -1,7 +1,104 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<PageTitle>Dashboard</PageTitle>
 
-Welcome to your new app.
+<MudContainer MaxWidth="MaxWidth.Large" Class="pa-0">
+
+    <div class="MainHeading d-flex-col justify-center pt-8">
+        <MudText Class="pb-5" Align="Align.Center" Typo="Typo.h2" Style="font-family: 'Advent Pro', sans-serif;">Velkommen til Trip</MudText>   
+    </div>
+ 
+    <div class="homeGrid mt-8">
+        <MudGrid Spacing="10" Justify="Justify.Center">
+            <MudItem xs="12" md="6" lg="4" Class="d-flex flex-column flex-grow-1">
+                <MudPaper Style="@($"background-color:{ColorValue};")" Elevation="@Elevation"
+                          Class="d-flex flex-column flex-grow-1 pa-0 homeCardBorderIconUp">
+                    <MudButton Variant="Variant.Text" DropShadow="false" Href="/tilgangsoversikt"
+                               Class="pa-4 mud-height-full d-inline">
+                        <MudItem>
+                            <MudStack Row="true" AlignItems="AlignItems.Center" Spacing="2" Class="mb-2">
+                                <MudIcon Icon="@Icons.Material.Filled.Person" Size="Size.Large"
+                                         Style="@(ColorfulStyle ? "color: #5C86FC;" : "color: black;")" />
+                                <MudText Typo="Typo.h5">Mine opplysninger</MudText>
+                            </MudStack>
+                            <MudDivider Class="divider"
+                                        Style="@(ColorfulStyle ? "border-color:#F36975;" : "border-color: black;")" />
+                            <MudText Class="d-block pt-2">Rediger dine egne opplysninger. Legg til venner eller profilbilde</MudText>
+                            </MudItem>
+                        </MudButton>
+                    </MudPaper>
+                </MudItem>
+
+                <MudItem xs="12" md="6" lg="4" Class="d-flex flex-column flex-grow-1">
+                    <MudPaper Style="@($"background-color:{ColorValue};")" Elevation="@Elevation"
+                              Class="d-flex flex-column flex-grow-1 pa-0 homeCardBorderIconUp">
+                        <MudButton Variant="Variant.Text" DropShadow="false" Href="/tilgangsoversikt"
+                                   Class="pa-4 mud-height-full d-inline">
+                            <MudItem>
+                                <MudStack Row="true" AlignItems="AlignItems.Center" Spacing="2" Class="mb-2">
+                                    <MudIcon Icon="@Icons.Material.Filled.Map"
+                                             Style="@(ColorfulStyle ? "color: #F36975;" : "color: black;")" />
+                                    <MudText Typo="Typo.h5">Mine turer</MudText>
+                                </MudStack>
+                                <MudDivider Class="divider"
+                                            Style="@(ColorfulStyle ? "border-color:#F36975;" : "border-color: black;")" />
+                                <MudText Class="d-block pt-2">Her finner du en komplett oversikt over turer du har vært på eller lagret i listen. Utforsk verden med Trip</MudText>
+                                </MudItem>
+                            </MudButton>
+                        </MudPaper>
+                    </MudItem>
+                   
+                    </MudGrid>
+
+                        <div class="d-flex mt-8">
+                                
+                        <MudChart T="double" ChartType="ChartType.StackedBar" ChartSeries="@_series" ChartLabels="@_xAxisLabels"
+                         ChartOptions="@_options" Width="100%" Height="350px" />
+                       
+                        </div>
+                   
+                   
+                </div>
+
+ </MudContainer>
+
+@code {
+    public int Elevation { get; set; } = 5;
+    public string ColorValue { get; set; } = "#f9f9f9";
+
+    [CascadingParameter]
+    public bool ColorfulStyle { get; set; }
+
+ 
+private readonly StackedBarChartOptions _options = new();
+
+    private readonly string[] _chartPalette =
+    [
+        
+        "#626FE1",
+        "#9D6BEF",
+        "#D578D3",
+        "#FEC779"
+    ];
+
+    protected override void OnInitialized()
+    {
+        _options.ShowValues = true;
+        _options.ChartPalette = _chartPalette;
+    }
+
+    private readonly List<ChartSeries<double>> _series =
+    [
+      
+        new() { Name = "Langtur", Data = new double[] { 40, 20, 25, 27, 46 } },
+        new() { Name = "Topptur", Data = new double[] { 19, 24, 35, 13, 28 } },
+        new() { Name = "Hytte til hytte", Data = new double[] { 8, 6, 11, 13, 4 } },
+        new() { Name = "Nærtur", Data = new double[] { 4, 3, 6, 6, 7 } },
+    
+    ];
+
+    private readonly string[] _xAxisLabels = { "Jan", "Feb", "Mar", "Apr", "Mai" };
+ 
+}
+

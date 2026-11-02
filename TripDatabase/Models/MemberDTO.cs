@@ -1,6 +1,6 @@
 namespace TripDatabase.Models;
 
-public class  MemberDTO
+public class MemberDTO
 {
     public long Id { get; set; }
     public string UserName { get; set; } = null!;

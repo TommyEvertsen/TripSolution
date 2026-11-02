@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TripDatabase.Models
+﻿namespace TripDatabase.Models
 {
     public class MemberDTORequest
     {

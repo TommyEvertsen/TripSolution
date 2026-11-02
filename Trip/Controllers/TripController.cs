@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TripDatabase.Models;
@@ -21,14 +16,14 @@ namespace Trip.Controllers
             _context = context;
         }
 
-        
+
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TripEntity>>> GetTrip()
         {
             return await _context.Trips.ToListAsync();
         }
 
-     
+
         [HttpGet("{id}")]
         public async Task<ActionResult<TripEntity>> GetTrip(long id)
         {
@@ -42,39 +37,39 @@ namespace Trip.Controllers
             return trip;
         }
 
-    
-  
-          [HttpPut("{id}")]
-          public async Task<IActionResult> PutTrip(long id, TripEntity trip)
-          {
-              if (id != trip.Id)
-              {
-                  return BadRequest();
-              }
 
-              _context.Entry(trip).State = EntityState.Modified;
 
-              try
-              {
-                  await _context.SaveChangesAsync();
-              }
-              catch (DbUpdateConcurrencyException)
-              {
-                  if (!TripExists(id))
-                  {
-                      return NotFound();
-                  }
-                  else
-                  {
-                      throw;
-                  }
-              }
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutTrip(long id, TripEntity trip)
+        {
+            if (id != trip.Id)
+            {
+                return BadRequest();
+            }
 
-              return NoContent();
-          }
+            _context.Entry(trip).State = EntityState.Modified;
 
-   
-  
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!TripExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+
+
         [HttpPost]
         public async Task<ActionResult<TripEntity>> PostTrip(TripEntity trip)
         {

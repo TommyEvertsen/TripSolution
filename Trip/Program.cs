@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using TripDatabase.Models;
-using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<TripContext>(options =>
