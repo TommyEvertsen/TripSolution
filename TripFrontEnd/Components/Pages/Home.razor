@@ -12,18 +12,16 @@
     <div class="homeGrid mt-8">
         <MudGrid Spacing="10" Justify="Justify.Center">
             <MudItem xs="12" md="6" lg="4" Class="d-flex flex-column flex-grow-1">
-                <MudPaper Style="@($"background-color:{ColorValue};")" Elevation="@Elevation"
+                <MudPaper  Elevation="@Elevation"
                           Class="d-flex flex-column flex-grow-1 pa-0 homeCardBorderIconUp">
                     <MudButton Variant="Variant.Text" DropShadow="false" Href="/tilgangsoversikt"
                                Class="pa-4 mud-height-full d-inline">
                         <MudItem>
                             <MudStack Row="true" AlignItems="AlignItems.Center" Spacing="2" Class="mb-2">
-                                <MudIcon Icon="@Icons.Material.Filled.Person" Size="Size.Large"
-                                         Style="@(ColorfulStyle ? "color: #5C86FC;" : "color: black;")" />
+                                <MudIcon Icon="@Icons.Material.Filled.Person" Size="Size.Large"/>
                                 <MudText Typo="Typo.h5">Mine opplysninger</MudText>
                             </MudStack>
-                            <MudDivider Class="divider"
-                                        Style="@(ColorfulStyle ? "border-color:#F36975;" : "border-color: black;")" />
+                            <MudDivider Class="divider"/>
                             <MudText Class="d-block pt-2">Rediger dine egne opplysninger. Legg til venner eller profilbilde</MudText>
                             </MudItem>
                         </MudButton>
@@ -31,18 +29,16 @@
                 </MudItem>
 
                 <MudItem xs="12" md="6" lg="4" Class="d-flex flex-column flex-grow-1">
-                    <MudPaper Style="@($"background-color:{ColorValue};")" Elevation="@Elevation"
+                    <MudPaper  Elevation="@Elevation"
                               Class="d-flex flex-column flex-grow-1 pa-0 homeCardBorderIconUp">
                         <MudButton Variant="Variant.Text" DropShadow="false" Href="/tilgangsoversikt"
                                    Class="pa-4 mud-height-full d-inline">
                             <MudItem>
                                 <MudStack Row="true" AlignItems="AlignItems.Center" Spacing="2" Class="mb-2">
-                                    <MudIcon Icon="@Icons.Material.Filled.Map"
-                                             Style="@(ColorfulStyle ? "color: #F36975;" : "color: black;")" />
+                                    <MudIcon Icon="@Icons.Material.Filled.Map"/>
                                     <MudText Typo="Typo.h5">Mine turer</MudText>
                                 </MudStack>
-                                <MudDivider Class="divider"
-                                            Style="@(ColorfulStyle ? "border-color:#F36975;" : "border-color: black;")" />
+                                <MudDivider Class="divider"/>
                                 <MudText Class="d-block pt-2">Her finner du en komplett oversikt over turer du har vært på eller lagret i listen. Utforsk verden med Trip</MudText>
                                 </MudItem>
                             </MudButton>
