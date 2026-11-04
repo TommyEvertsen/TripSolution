@@ -96,3 +96,7 @@ main {
         right: 0.75rem;
         top: 0.5rem;
     }
+
+::deep .darkmode-toggle:hover {
+    color: #FEC779 !important;
+}
